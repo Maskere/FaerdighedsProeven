@@ -28,6 +28,9 @@
             Console.WriteLine(gymHall2);
             Booking booking7 = new Booking(gymHall2) { Id = 7, Start = new DateTime(2024, 6, 15, 10, 0, 0), End = new DateTime(2024, 7, 21, 12, 0, 0) };
             gymHall2.RegisterBooking(booking7);
+            Console.WriteLine();
+            Console.WriteLine(gymHall2);
+
 
             try
             {

@@ -118,7 +118,7 @@ namespace SkillTest
         public TimeSpan TotalTimeBooked(DateTime dateTime,Booking firstBooking, Booking lastBooking)
         {
             TimeSpan total = lastBooking.End - firstBooking.Start;
-            Console.WriteLine($"Den {dateTime.Day} / {dateTime.Month} er der total timer {total} booket");
+            Console.WriteLine($"Den {dateTime.Day}-{dateTime.Month}-{dateTime.Year} er der total timer {total} booket");
             return total;
         }
         public override string ToString()
