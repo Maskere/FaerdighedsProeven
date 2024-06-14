@@ -15,7 +15,7 @@ namespace SkillTest
         private string _address;
         private string _phone;
         private string _email;
-        public Dictionary<int, Booking> bookings;
+        private Dictionary<int, Booking> bookings;
 
         public GymHall()
         {
@@ -51,7 +51,10 @@ namespace SkillTest
             get { return _email; }
             set { _email = value; }
         }
-
+        public Dictionary<int, Booking> Bookings
+        {
+            get { return bookings; }
+        }
         public void RegisterBooking(Booking booking)
         {
             bookings.Add(booking.Id, booking);
@@ -112,16 +115,11 @@ namespace SkillTest
                 return true;
             }
         }
-        public TimeSpan TotalTimeBooked()
+        public TimeSpan TotalTimeBooked(DateTime dateTime,Booking firstBooking, Booking lastBooking)
         {
-            TimeSpan tSpan;
-            foreach (Booking booking in bookings.Values)
-            {
-                tSpan = booking.End - booking.Start;
-                Console.WriteLine(tSpan);
-                return tSpan;
-            }
-            return new TimeSpan();
+            TimeSpan total = lastBooking.End - firstBooking.Start;
+            Console.WriteLine($"Den {dateTime.Day} / {dateTime.Month} er der total timer {total} booket");
+            return total;
         }
         public override string ToString()
         {

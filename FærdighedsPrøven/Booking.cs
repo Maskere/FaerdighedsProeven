@@ -13,7 +13,7 @@ namespace SkillTest
         private DateTime _end;
         private int _participants;
 
-        public Booking()
+        public Booking(GymHall gymHall)
         {
             _id = Id;
             _start = Start;
